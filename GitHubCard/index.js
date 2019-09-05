@@ -59,9 +59,32 @@ const followersArray = [];
 function myCard(data) {
   console.log('data:', data)
   const 
-    container = document.createElement('div')
-    image = document.createElement('img')
-    
+    newCard = document.createElement('div'),
+    image = document.createElement('img'),
+    cardInfo = document.createElement('div'),
+    name = document.createElement('h3'),
+    username = document.createElement('p'),
+    location = document.createElement('p'),
+    profile = document.createElement('p'),
+    profileLink = document.createElement('a'),
+    followers = document.createElement('p'),
+    following = document.createElement('p'),
+    bio = document.createElement('p');
+
+
+    newCard.classList.add('card-info');
+    image.src = data['avatar_url'];
+    cardInfo.classList.add('card-info');
+    name.classList.add('name');
+    name.textContent = data['name'];
+    username.classList.add('username');
+    username.textContent = data['login'];
+    location.textContent = data['location'];
+    profile.appendChild(profileLink);
+    profileLink.href = data['url'];
+    followers.textContent = data['followers'];
+    following.textContent = data['following'];
+    bio.textContent = data['bio'];
 
 }
 
