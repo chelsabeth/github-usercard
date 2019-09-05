@@ -2,13 +2,14 @@
            (replacing the palceholder with your Github name):
            https://api.github.com/users/<your name>
 */
+const entryPoint = document.querySelector('.cards');
 
 axios 
   .get('https://api.github.com/users/chelsabeth')
   .then(response => {
     console.log(response);
-    const newProfile = myCard(response.data)
-
+    const newCard = response.data;
+    entryPoint.appendChild(newCard);
   })
   .catch(error => {
     console.log('No data was returned', error);
@@ -56,7 +57,7 @@ const followersArray = [];
 </div>
 */
 
-function myCard(data) {
+function makeCard(data) {
   console.log('data:', data)
   const 
     newCard = document.createElement('div'),
@@ -73,20 +74,32 @@ function myCard(data) {
 
     //Assigning 
     newCard.classList.add('card-info');
-    image.src = data['avatar_url'];
+    image.src = `${data.avatar_url}`;
     cardInfo.classList.add('card-info');
     name.classList.add('name');
     name.textContent = data['name'];
     username.classList.add('username');
     username.textContent = data['login'];
     location.textContent = data['location'];
-    profile.appendChild(profileLink);
     profileLink.href = data['url'];
     followers.textContent = data['followers'];
     following.textContent = data['following'];
     bio.textContent = data['bio'];
 
-    return myCard;
+    //Structure
+    newCard.appendChild(image);
+    newCard.appendChild(cardInfo);
+    cardInfo.appendChild(name);
+    cardInfo.appendChild(username);
+    cardInfo.appendChild(location);
+    cardInfo.appendChild(profile);
+    cardInfo.appendChild(followers);
+    cardInfo.appendChild(following);
+    cardInfo.appendChild(bio);
+    profile.appendChild(profileLink);
+
+
+    return newCard;
 }
 
 /* List of LS Instructors Github username's: 
