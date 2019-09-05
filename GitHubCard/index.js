@@ -3,12 +3,12 @@
            https://api.github.com/users/<your name>
 */
 const followersArray = 
-['BCtopics',
+['chelsabeth',
+'BCtopics',
 'EricBanker12',
 'wais-a',
 'sydneyblom',
-'markgowen',
-'chelsabeth'];
+'markgowen'];
 
 const entryPoint = document.querySelector('.cards');
 followersArray.forEach(item => {
