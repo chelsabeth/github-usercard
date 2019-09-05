@@ -77,14 +77,14 @@ function makeCard(data) {
     image.src = `${data.avatar_url}`;
     cardInfo.classList.add('card-info');
     name.classList.add('name');
-    name.textContent = data['name'];
+    name.textContent = data.name;
     username.classList.add('username');
-    username.textContent = data['login'];
-    location.textContent = data['location'];
-    profileLink.href = data['url'];
-    followers.textContent = data['followers'];
-    following.textContent = data['following'];
-    bio.textContent = data['bio'];
+    username.textContent = data.login;
+    location.textContent = `Location: ${data.location}`;
+    profileLink.href = `Profile: ${data.url}`;
+    followers.textContent = `Followers: ${data.followers}`;
+    following.textContent = `Following: ${data.following}`;
+    bio.textContent = `Bio: ${data.bio}`;
 
     //Structure
     newCard.appendChild(image);
