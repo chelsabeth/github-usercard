@@ -3,6 +3,17 @@
            https://api.github.com/users/<your name>
 */
 
+axios 
+  .get('https://api.github.com/users/chelsabeth')
+  .then(response => {
+    console.log(response);
+    const newProfile = myCard(response.data)
+
+  })
+  .catch(error => {
+    console.log('No data was returned', error);
+  });
+
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
    data in order to use it to build your component function 
@@ -43,8 +54,16 @@ const followersArray = [];
     <p>Bio: {users bio}</p>
   </div>
 </div>
-
 */
+
+function myCard(data) {
+  console.log('data:', data)
+  const 
+    container = document.createElement('div')
+    image = document.createElement('img')
+    
+
+}
 
 /* List of LS Instructors Github username's: 
   tetondan
