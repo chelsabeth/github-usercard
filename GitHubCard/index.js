@@ -71,7 +71,7 @@ function myCard(data) {
     following = document.createElement('p'),
     bio = document.createElement('p');
 
-
+    //Assigning 
     newCard.classList.add('card-info');
     image.src = data['avatar_url'];
     cardInfo.classList.add('card-info');
@@ -86,6 +86,7 @@ function myCard(data) {
     following.textContent = data['following'];
     bio.textContent = data['bio'];
 
+    return myCard;
 }
 
 /* List of LS Instructors Github username's: 
